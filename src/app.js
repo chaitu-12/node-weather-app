@@ -6,6 +6,7 @@ const forecast=require('./utils/forecast')
 
 //Define paths for Express config
 const app = express()
+const port = process.env.Port || 3000
 const pathDirectory = path.join(__dirname,'../public')
 const partialPath = path.join(__dirname,'../templates/partials')
 const viewPath = path.join(__dirname, '../templates/views')
@@ -82,6 +83,6 @@ app.get('*',(req,res)=>{
         name: 'Chaitanya'
     })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Application has started succesfully')
 })
